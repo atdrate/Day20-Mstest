@@ -6,33 +6,20 @@ namespace MoodTest
     public class UnitTest1
     {
         [TestMethod]
-        public void GivenMsgReturnHappy()
+        public void Given_nullmood_Expecting_Happy_Results()
         {
-            //Arrange
-            string msg = "i am in happy mood";
+            //Arrange;
+            AnalyzeMood mood = new AnalyzeMood(null);
             string expected = "happy";
-            //act
-            AnalyzeMood analyzeMood = new AnalyzeMood(msg);
-            var actual = analyzeMood.Mood();
-            //assert
+
+            //Act
+            string actual = mood.Analyser();
+
+            //Asert
             Assert.AreEqual(expected, actual);
             Console.WriteLine(actual);
-
         }
-        [TestMethod]
-        public void GivenMsgReturnSad()
-        {
-            //Arrange
-            string msg = "i am in sad mood";
-            string expected = "sad";
-            //act
-            AnalyzeMood analyzeMood = new AnalyzeMood(msg);
-            var actual = analyzeMood.Mood();
-            //assert
-            Assert.AreEqual(expected, actual);
-            Console.WriteLine(actual);
 
-        }
     }
     
 }

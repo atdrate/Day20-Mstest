@@ -9,17 +9,32 @@ namespace MoodAnalyzer
     public class AnalyzeMood
     {
         public string message;
+
+       
         public AnalyzeMood(string message)
         {
             this.message = message;
         }
-        public string Mood()
+
+        
+        public string Analyser() //check msg passing into the constructor 
         {
-            message = message.ToLower();
-            if (message.Contains("happy"))
+            try
+            {
+                if (this.message.ToLower().Contains("happy"))
+                {
+                    return "happy";
+                }
+                else
+                {
+                    return "no mood";
+                }
+            }
+            catch
+            {
                 return "happy";
-            else
-                return "sad";
+            }
         }
     }
+
 }
